@@ -1,10 +1,35 @@
+/*var count = 0,
+  timerId,
+  go = false,
+  min = 0,
+  sek = 0;
+  milisec = 0;
+  //start_time = for_time.innerHTML = ('00:00:00'),
+  //start_milisec = for_milisec.innerHTML = ('00');
+function start_count() {
+  if (go == false ) {
+    timerId = setInterval(function(){
+      milisec++;
+      if (milisec == 1000) {
+        milisec = 0;
+        sek++;
+      }
+if (sek==60) {
+  sek = 0;
+  min++;
+}
+var str = min+":"+sek+":"+milisec;
+for_time.innerHTML=str;*/
+
+
+
 count_time.addEventListener( 'click', start_count );
 clear.addEventListener( 'click', stop_count );
 count_pause.addEventListener( 'click', pause );
 
 var count = 0,
   timerId,
-  go = false;
+  go = false,
   start_time = for_time.innerHTML = ('00:00:00'),
   start_milisec = for_milisec.innerHTML = ('00');
 function start_count() {
