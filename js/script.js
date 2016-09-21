@@ -4,8 +4,11 @@ count_pause.addEventListener( 'click', pause );
 
 var count = 0,
   timerId,
-  go = false;
+  go = false,
+  start_time = for_time.innerHTML = ('00:00:00'),
+  start_milisec = for_milisec.innerHTML = ('00');
 function start_count() {
+
   if (go == false ) {
     timerId = setInterval(function(){
       count++;
@@ -34,8 +37,8 @@ function stop_count() {
   clearInterval(timerId);
   go = false;
   count = 0;
-  for_time.innerHTML = ('00:00:00');
-  for_milisec.innerHTML = ('00');
+  for_time.innerHTML = start_time ;
+  for_milisec.innerHTML = start_milisec;
 };
 
 /*start.addEventListener("click",start_click);
