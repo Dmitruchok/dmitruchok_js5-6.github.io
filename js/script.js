@@ -21,6 +21,19 @@ if (sek==60) {
 var str = min+":"+sek+":"+milisec;
 for_time.innerHTML=str;*/
 
+/*function startTime() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var milisec = date.getMilliseconds();
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    if (milisec == 1000) milisec = "0" + milisec;
+    for_time.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milisec;
+    setTimeout(startTime, 1000);
+  }*/
 
 
 count_time.addEventListener( 'click', start_count );
@@ -43,7 +56,7 @@ function start_count() {
       var min = Math.floor(count/60000)%60;
       if (min<10) {min = "0"+min;}
       var hours = Math.floor(count/3600000)%24;
-      if (hours<24) {hours = "00";}
+      if (hours<10) {hours = "0"+hours;}
       var str = hours+":"+min+":"+sec;
       for_time.innerHTML=str;
     }, 1);
