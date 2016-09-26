@@ -73,7 +73,7 @@ function start_count() {
       var str = hours + ":" + min+ ":" + sec;
       for_time.innerHTML=str;
       for_milisec.innerHTML = milisec;
-    }, 1);
+    }, 10);
       go=true;
     }
 }
