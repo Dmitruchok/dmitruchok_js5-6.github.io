@@ -50,8 +50,7 @@ var this_date = new Date(),
   start_time = for_time.innerHTML = ( '00:00:00' ),
   start_milisec = for_milisec.innerHTML = ( '000' );
 function start_count() {
-  if (go == false ) {
-    timerId = setInterval(function(){
+  if (go == false ) {timerId = setInterval(function() {
       var new_date = new Date() - this_date;
       var milisec = new_date%1000;
       var sec = Math.floor( new_date/1000 )%60;
