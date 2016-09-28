@@ -44,7 +44,6 @@ var this_date = new Date(),
   go = false,
   start_time = for_time.innerHTML = ( '00:00:00.000' );
 
-
 function startTime() {
   if (go == false ) {timerId = setInterval(function() {
       var new_date = new Date() - this_date;

@@ -1,0 +1,16 @@
+.timer {
+  text-align: center;
+}
+
+div#for_time {
+    font-size: 60px;
+    color: #da0000;
+}
+
+button {
+  font-size: 25px;
+}
+
+p {
+  font-size: 25px;
+}
