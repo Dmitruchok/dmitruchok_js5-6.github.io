@@ -1,6 +1,6 @@
 .timer {
   padding-top: 200px;
-  height: 800px;
+
   background: #000;
   text-align: center;
 }
@@ -15,7 +15,13 @@ button {
   font-size: 25px;
 }
 
+.all_split {
+  margin-bottom: 20px;
+}
+
 p {
+  display: block;
   font-size: 25px;
   font-weight: bold;
+  margin: 0;
 }

@@ -31,6 +31,7 @@ buttonStop.id = 'reset_time';
 timer.appendChild(buttonStop);
 
 timersSave = document.createElement( 'div' );
+timersSave.classList.add('all_split');
 timer.appendChild(timersSave);
 
 count_time.addEventListener( 'click', startTime);
