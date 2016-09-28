@@ -1,4 +1,4 @@
-var forTime, forMillisecond, buttonStart, buttonPaused, buttonStop, timer;
+var forTime, forMillisecond, buttonStart, buttonPaused, buttonStop, timer, timersSave;
 
 timer = document.createElement( 'div' );
 timer.classList.add('timer');
@@ -33,6 +33,7 @@ count_stop.addEventListener( 'click', stopTime );
 
 
 var this_date = new Date(),
+  str,
   timerId,
   go = false,
   start_time = for_time.innerHTML = ( '00:00:00' ),
@@ -64,6 +65,9 @@ function startCount() {
 function pauseTime() {
   go == true;
   clearInterval( timerId );
+  timersSave = document.createElement( 'div' );
+  timer.appendChild(timersSave)
+  timersSave.innerHTML = str;
 };
 
 
