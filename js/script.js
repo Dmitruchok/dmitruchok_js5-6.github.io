@@ -1,5 +1,4 @@
 var forTime,
-  forMillisecond,
   buttonStart,
   buttonSave,
   buttonPaused,
@@ -28,25 +27,25 @@ timer.appendChild(buttonSave);
 
 buttonStop = document.createElement( 'button' );
 buttonStop.innerHTML = 'Reset';
-buttonStop.id = 'count_stop';
+buttonStop.id = 'reset_time';
 timer.appendChild(buttonStop);
 
 timersSave = document.createElement( 'div' );
 timer.appendChild(timersSave);
 
-count_time.addEventListener( 'click', startCount );
+count_time.addEventListener( 'click', startTime);
 time_save.addEventListener( 'click', save );
-count_stop.addEventListener( 'click', stopTime );
+reset_time.addEventListener( 'click', resetTime );
 
 
 var this_date = new Date(),
   str,
   timerId,
   go = false,
-  start_time = for_time.innerHTML = ( '00:00:00:000' );
+  start_time = for_time.innerHTML = ( '00:00:00.000' );
 
 
-function startCount() {
+function startTime() {
   if (go == false ) {timerId = setInterval(function() {
       var new_date = new Date() - this_date;
       var milisec = new_date%1000;
@@ -69,17 +68,20 @@ function startCount() {
     } else if (go == true){
       clearInterval( timerId );
       buttonStart.innerHTML = 'Start';
-      go = false;
+      for_time.innerHTML = ( '00:00:00.000' );
+      nextSaveTime = document.createElement( 'p' );
+      timersSave.appendChild(nextSaveTime);
+      nextSaveTime.innerHTML ='Stop' + ':' + str;
     };
 };
 
 function save() {
-  nextSaveTime =document.createElement( 'p' );
+  nextSaveTime = document.createElement( 'p' );
   timersSave.appendChild(nextSaveTime);
-  nextSaveTime.innerHTML = 'Spli' + ':' + str;
+  nextSaveTime.innerHTML ='Split' + ':' + str;
 };
 
-function stopTime() {
+function resetTime() {
   clearInterval( timerId );
   go = false;
   this_date = new Date();
