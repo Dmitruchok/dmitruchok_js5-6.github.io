@@ -74,17 +74,20 @@ function startCount() {
       str = hours + ":" + min+ ":" + sec;
       for_time.innerHTML=str;
       for_milisec.innerHTML = milisec;
+      buttonStart.innerHTML = 'Pause';
     }, 1);
       go=true;
+    } else if (go ==true){
+      pauseTime();
+      buttonStart.innerHTML = 'Start';
     }
 };
 
 function save() {
   nextSaveTime =document.createElement( 'p' );
   timersSave.appendChild(nextSaveTime);
-  nextSaveTime.innerHTML = str;
+  nextSaveTime.innerHTML = 'Spli' + ':' + str;
 };
-
 
 function pauseTime() {
   go == true;
