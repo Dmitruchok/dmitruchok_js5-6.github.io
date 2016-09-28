@@ -1,4 +1,12 @@
-var forTime, forMillisecond, buttonStart, buttonSave, buttonPaused, buttonStop, timer, timersSave;
+var forTime,
+  forMillisecond,
+  buttonStart,
+  buttonSave,
+  buttonPaused,
+  buttonStop,
+  timer,
+  timersSave,
+  nextSaveTime;
 
 timer = document.createElement( 'div' );
 timer.classList.add('timer');
@@ -31,6 +39,9 @@ buttonStop = document.createElement( 'button' );
 buttonStop.innerHTML = 'Stop';
 buttonStop.id = 'count_stop';
 timer.appendChild(buttonStop);
+
+timersSave = document.createElement( 'div' );
+timer.appendChild(timersSave);
 
 count_time.addEventListener( 'click', startCount );
 time_save.addEventListener( 'click', save );
@@ -69,9 +80,9 @@ function startCount() {
 };
 
 function save() {
-  timersSave = document.createElement( 'div' );
-  timer.appendChild(timersSave)
-  timersSave.innerHTML = str;
+  nextSaveTime =document.createElement( 'p' );
+  timersSave.appendChild(nextSaveTime);
+  nextSaveTime.innerHTML = str;
 };
 
 
@@ -80,11 +91,11 @@ function pauseTime() {
   clearInterval( timerId );
 };
 
-
 function stopTime() {
   clearInterval( timerId );
   go = false;
   this_date = new Date();
   for_time.innerHTML = start_time ;
   for_milisec.innerHTML = start_milisec;
+  timersSave.innerHTML = '';
 };
