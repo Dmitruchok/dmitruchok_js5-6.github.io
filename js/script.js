@@ -77,10 +77,12 @@ function startCount() {
       buttonStart.innerHTML = 'Pause';
     }, 1);
       go=true;
-    } else if (go ==true){
+    } else if (go == true){
       pauseTime();
       buttonStart.innerHTML = 'Start';
+      go = false;
     }
+
 };
 
 function save() {
