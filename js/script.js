@@ -1,4 +1,4 @@
-var forTime, forMillisecond, buttonStart, buttonPaused, buttonStop, timer, timersSave;
+var forTime, forMillisecond, buttonStart, buttonSave, buttonPaused, buttonStop, timer, timersSave;
 
 timer = document.createElement( 'div' );
 timer.classList.add('timer');
@@ -17,6 +17,11 @@ buttonStart.innerHTML = 'Start';
 buttonStart.id = 'count_time';
 timer.appendChild(buttonStart);
 
+buttonSave = document.createElement( 'button' );
+buttonSave.innerHTML = 'Save';
+buttonSave.id = 'time_save';
+timer.appendChild(buttonSave);
+
 buttonPaused = document.createElement( 'button' );
 buttonPaused.innerHTML = 'Pause';
 buttonPaused.id = 'pause_time';
@@ -28,6 +33,7 @@ buttonStop.id = 'count_stop';
 timer.appendChild(buttonStop);
 
 count_time.addEventListener( 'click', startCount );
+time_save.addEventListener( 'click', save );
 pause_time.addEventListener( 'click', pauseTime);
 count_stop.addEventListener( 'click', stopTime );
 
@@ -62,12 +68,16 @@ function startCount() {
     }
 };
 
-function pauseTime() {
-  go == true;
-  clearInterval( timerId );
+function save() {
   timersSave = document.createElement( 'div' );
   timer.appendChild(timersSave)
   timersSave.innerHTML = str;
+};
+
+
+function pauseTime() {
+  go == true;
+  clearInterval( timerId );
 };
 
 
