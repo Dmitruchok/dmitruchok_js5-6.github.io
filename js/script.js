@@ -16,27 +16,18 @@ forTime = document.createElement( 'div' );
 forTime.id = 'for_time';
 timer.appendChild(forTime);
 
-forMillisecond = document.createElement( 'div' );
-forMillisecond.id = 'for_milisec';
-timer.appendChild(forMillisecond);
-
 buttonStart = document.createElement( 'button' );
 buttonStart.innerHTML = 'Start';
 buttonStart.id = 'count_time';
 timer.appendChild(buttonStart);
 
 buttonSave = document.createElement( 'button' );
-buttonSave.innerHTML = 'Save';
+buttonSave.innerHTML = 'Split';
 buttonSave.id = 'time_save';
 timer.appendChild(buttonSave);
 
-buttonPaused = document.createElement( 'button' );
-buttonPaused.innerHTML = 'Pause';
-buttonPaused.id = 'pause_time';
-timer.appendChild(buttonPaused);
-
 buttonStop = document.createElement( 'button' );
-buttonStop.innerHTML = 'Stop';
+buttonStop.innerHTML = 'Reset';
 buttonStop.id = 'count_stop';
 timer.appendChild(buttonStop);
 
@@ -45,7 +36,6 @@ timer.appendChild(timersSave);
 
 count_time.addEventListener( 'click', startCount );
 time_save.addEventListener( 'click', save );
-pause_time.addEventListener( 'click', pauseTime);
 count_stop.addEventListener( 'click', stopTime );
 
 
@@ -53,8 +43,8 @@ var this_date = new Date(),
   str,
   timerId,
   go = false,
-  start_time = for_time.innerHTML = ( '00:00:00' ),
-  start_milisec = for_milisec.innerHTML = ( '000' );
+  start_time = for_time.innerHTML = ( '00:00:00:000' );
+
 
 function startCount() {
   if (go == false ) {timerId = setInterval(function() {
@@ -71,18 +61,16 @@ function startCount() {
       if ( sec<10 ) { sec = '0' + sec };
       if  (min<10 ) { min = '0' + min };
       if ( hours<10 ) { hours = '0' + hours };
-      str = hours + ":" + min+ ":" + sec;
+      str = hours + ":" + min+ ":" + sec + ":" + milisec;
       for_time.innerHTML=str;
-      for_milisec.innerHTML = milisec;
-      buttonStart.innerHTML = 'Pause';
+      buttonStart.innerHTML = 'Stop';
     }, 1);
       go=true;
     } else if (go == true){
-      pauseTime();
+      clearInterval( timerId );
       buttonStart.innerHTML = 'Start';
       go = false;
-    }
-
+    };
 };
 
 function save() {
@@ -91,16 +79,11 @@ function save() {
   nextSaveTime.innerHTML = 'Spli' + ':' + str;
 };
 
-function pauseTime() {
-  go == true;
-  clearInterval( timerId );
-};
-
 function stopTime() {
   clearInterval( timerId );
   go = false;
   this_date = new Date();
   for_time.innerHTML = start_time ;
-  for_milisec.innerHTML = start_milisec;
   timersSave.innerHTML = '';
+  buttonStart.innerHTML = 'Start';
 };
