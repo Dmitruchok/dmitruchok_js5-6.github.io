@@ -1,6 +1,9 @@
+body {
+    background: #000;
+}
+
 .timer {
   padding-top: 200px;
-  background: #000;
   text-align: center;
 }
 
