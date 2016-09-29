@@ -71,17 +71,20 @@ function startTime() {
 
     }, 1);
     go=true;
-    } else if (go == true) {
-      clearInterval( timerId );
-      this_date = new Date();
-      buttonStart.value = 'Start';
-      for_time.innerHTML = ( '00:00:00.000' );
+  } else if (go == true) {
       nextSaveTime = document.createElement( 'p' );
       timersSave.appendChild(nextSaveTime);
       nextSaveTime.innerHTML ='Stop' + ':' + str;
+      clearInterval( timerId );
+      this_date = new Date();
+      for_time.innerHTML = start_time;
+      buttonStart.value = 'Start';
       go = false;
-    }
-};
+      if (go =false) {
+        startTime()
+      }
+    };
+  };
 
 function save() {
   nextSaveTime = document.createElement( 'p' );
@@ -90,10 +93,10 @@ function save() {
 };
 
 function resetTime() {
+
   clearInterval( timerId );
-  go = false;
   this_date = new Date();
   for_time.innerHTML = start_time ;
   timersSave.innerHTML = '';
-  buttonStart.innerHTML = 'Start';
+  buttonStart.value = 'Start';
 };
