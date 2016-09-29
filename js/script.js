@@ -87,9 +87,11 @@ function save() {
 };
 
 function resetTime() {
-  buttonStart.value = 'Start';
   clearInterval( timerId );
+  buttonStart.value = 'Start';
+  go = true;
   this_date = new Date();
   for_time.innerHTML = start_time ;
   timersSave.innerHTML = '';
+
 };
