@@ -1,4 +1,5 @@
 var forTime,
+  str,
   buttonStart,
   buttonSave,
   buttonPaused,
@@ -66,17 +67,20 @@ function startTime() {
       if ( hours<10 ) { hours = '0' + hours };
       str = hours + ":" + min+ ":" + sec + ":" + milisec;
       for_time.innerHTML=str;
-      buttonStart.innerHTML = 'Stop';
+      buttonStart.value = 'Stop';
+
     }, 1);
-      go=true;
-    } else if (go == true){
+    go=true;
+    } else if (go == true) {
       clearInterval( timerId );
-      buttonStart.innerHTML = 'Start';
+      this_date = new Date();
+      buttonStart.value = 'Start';
       for_time.innerHTML = ( '00:00:00.000' );
       nextSaveTime = document.createElement( 'p' );
       timersSave.appendChild(nextSaveTime);
       nextSaveTime.innerHTML ='Stop' + ':' + str;
-    };
+      go = false;
+    }
 };
 
 function save() {

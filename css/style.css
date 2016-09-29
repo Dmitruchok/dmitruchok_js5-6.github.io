@@ -3,14 +3,15 @@ body {
 }
 
 .timer {
-  padding-top: 200px;
+  margin-top: 220px;
   text-align: center;
 }
 
 div#for_time {
+  color: #f50505;
   font-size: 84px;
   font-weight: 900;
-  color: #f50505;;
+  margin-bottom: 30px;
 }
 
 input[type="button"]{
@@ -24,6 +25,7 @@ input[type="button"]{
 
 p {
   display: block;
+  color: #a7a7a7;
   font-size: 40px;
   font-weight: bold;
   margin: 0;
