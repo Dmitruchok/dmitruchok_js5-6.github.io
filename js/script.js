@@ -7,7 +7,7 @@ var forTime,
   timersSave,
   nextSaveTime;
 
-timer = document.createElement( 'div' );
+timer = document.createElement( 'form' );
 timer.classList.add('timer');
 document.body.appendChild(timer);
 
@@ -15,18 +15,21 @@ forTime = document.createElement( 'div' );
 forTime.id = 'for_time';
 timer.appendChild(forTime);
 
-buttonStart = document.createElement( 'button' );
-buttonStart.innerHTML = 'Start';
+buttonStart = document.createElement( 'input' );
+buttonStart.type = 'button';
+buttonStart.value = 'Start';
 buttonStart.id = 'count_time';
 timer.appendChild(buttonStart);
 
-buttonSave = document.createElement( 'button' );
-buttonSave.innerHTML = 'Split';
+buttonSave = document.createElement( 'input' );
+buttonSave.type = 'button';
+buttonSave.value = 'Split';
 buttonSave.id = 'time_save';
 timer.appendChild(buttonSave);
 
-buttonStop = document.createElement( 'button' );
-buttonStop.innerHTML = 'Reset';
+buttonStop = document.createElement( 'input' );
+buttonStop.type = 'button';
+buttonStop.value = 'Reset';
 buttonStop.id = 'reset_time';
 timer.appendChild(buttonStop);
 
