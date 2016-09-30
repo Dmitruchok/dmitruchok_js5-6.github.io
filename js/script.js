@@ -52,6 +52,12 @@ var this_date = new Date(),
 function startTime() {
   if (go == false ) {timerId = setInterval(function() {
       var new_date = new Date() - this_date;
+      /*var date = new Date();
+      var hours = date.getHours();
+      var min = date.getMinutes();
+      var sec = date.getSeconds();
+      var milisec = date.getMilliseconds();
+      var new_date = date.getTime() - this_date.getTime();*/
       var milisec = new_date%1000;
       if ( milisec<10 ) {
          milisec = '00' + milisec }
@@ -74,10 +80,12 @@ function startTime() {
       timersSave.appendChild(nextSaveTime);
       nextSaveTime.innerHTML ='Stop' + ':' + str;
       clearInterval( timerId );
-      this_date = new Date();
+      new_date = new Date() - this_date;
       for_time.innerHTML = start_time;
       buttonStart.value = 'Start';
+      go = false;
     };
+
   };
 
 function save() {
