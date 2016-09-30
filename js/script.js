@@ -43,7 +43,7 @@ time_save.addEventListener( 'click', save );
 reset_time.addEventListener( 'click', resetTime );
 
 
-var this_date = new Date(),
+var this_date,// = new Date(),
   str,
   timerId,
   go = false,
@@ -51,7 +51,8 @@ var this_date = new Date(),
 
 function startTime() {
   if (go == false ) {timerId = setInterval(function() {
-      var new_date = new Date() - this_date;
+    var startDate = new Date();
+      var new_date = startDate.getTime() - this_date.getTime();
       /*var date = new Date();
       var hours = date.getHours();
       var min = date.getMinutes();
