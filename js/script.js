@@ -77,6 +77,7 @@ function startTime() {
       this_date = new Date();
       for_time.innerHTML = start_time;
       buttonStart.value = 'Start';
+      go = false;
     };
   };
 
