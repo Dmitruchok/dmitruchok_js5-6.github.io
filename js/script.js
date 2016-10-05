@@ -1,4 +1,4 @@
-var forTime,
+  var forTime,
   str,
   buttonStart,
   buttonSave,
@@ -52,7 +52,7 @@ var this_date = new Date(),
 function startTime() {
   if (go == false ) {timerId = setInterval(function() {
     var startDate = new Date();
-      var new_date = startDate.getTime() - this_date;
+      var new_date = startDate.getTime() - this_date.getTime();
       /*var date = new Date();
       var hours = date.getHours();
       var min = date.getMinutes();
