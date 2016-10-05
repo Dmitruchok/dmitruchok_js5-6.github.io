@@ -81,7 +81,7 @@ function startTime() {
       timersSave.appendChild(nextSaveTime);
       nextSaveTime.innerHTML ='Stop' + ':' + str;
       clearInterval( timerId );
-      new_date = new Date() - this_date;
+      new_date = new Date();
       for_time.innerHTML = start_time;
       buttonStart.value = 'Start';
       go = false;
