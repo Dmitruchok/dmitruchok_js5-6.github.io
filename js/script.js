@@ -50,6 +50,7 @@ var this_date = 0,
   go = false,
   start_time = for_time.innerHTML = ( '00:00:00.000' );
 
+
 function startTime() {
   this_date = new Date();
   if (go == false ) {timerId = setInterval(function() {
@@ -85,9 +86,13 @@ function startTime() {
 
 function save() {
   nextSaveTime = document.createElement( 'p' );
+  if (buttonStart.value == 'Start') {
+    nextSaveTime.style.display = 'none'
+  }
   timersSave.appendChild(nextSaveTime);
   nextSaveTime.innerHTML = ++i + ' ' + 'Split' + ':' + str;
   return i;
+
 };
 
 function resetTime() {
