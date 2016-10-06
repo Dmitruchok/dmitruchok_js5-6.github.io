@@ -91,13 +91,7 @@ function save() {
 
 function resetTime() {
   buttonStart.value = 'Start';
+  startTime();
+  timersSave.innerHTML = '';
   clearInterval( timerId );
-  go = true;
-  for_time.innerHTML = start_time ;
-
-  if (buttonStart.value = 'Start') {
-    startTime();
-    timersSave.innerHTML = '';
-  }
-
 };
