@@ -44,7 +44,7 @@ reset_time.addEventListener( 'click', resetTime );
 
 
 var this_date = 0,
-  i=0,
+  i = 0,
   str,
   timerId,
   go = false,
@@ -75,7 +75,7 @@ function startTime() {
   } else {
       nextSaveTime = document.createElement( 'p' );
       timersSave.appendChild(nextSaveTime);
-      nextSaveTime.innerHTML ='Stop' + ':' + str;
+      nextSaveTime.innerHTML = ++i + ' '+ 'Stop' + ':' + str;
       clearInterval( timerId );
       for_time.innerHTML = start_time;
       buttonStart.value = 'Start';
@@ -87,12 +87,9 @@ function startTime() {
 function save() {
   nextSaveTime = document.createElement( 'p' );
   timersSave.appendChild(nextSaveTime);
-  if (buttonStart.value = 'Start') {
-    timersSave.innerHTML = '';
-  }
-
   i++;
   nextSaveTime.innerHTML = i+ ' ' + 'Split' + ':' + str;
+  return i;
 
 };
 
