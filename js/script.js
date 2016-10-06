@@ -88,11 +88,11 @@ function save() {
   nextSaveTime = document.createElement( 'p' );
   if (buttonStart.value == 'Start') {
     nextSaveTime.style.display = 'none'
+
   }
   timersSave.appendChild(nextSaveTime);
   nextSaveTime.innerHTML = ++i + ' ' + 'Split' + ':' + str;
   return i;
-
 };
 
 function resetTime() {
