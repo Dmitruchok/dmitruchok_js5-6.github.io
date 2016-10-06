@@ -76,7 +76,7 @@ function startTime() {
       timersSave.appendChild(nextSaveTime);
       nextSaveTime.innerHTML ='Stop' + ':' + str;
       clearInterval( timerId );
-      new_date = new Date();
+      //new_date = new Date();
       for_time.innerHTML = start_time;
       buttonStart.value = 'Start';
       go = false;
@@ -91,11 +91,16 @@ function save() {
 };
 
 function resetTime() {
-  clearInterval( timerId );
   buttonStart.value = 'Start';
+  clearInterval( timerId );
+  //this_date = 0;
   go = true;
-  this_date = 0;
   for_time.innerHTML = start_time ;
   timersSave.innerHTML = '';
+
+  if (buttonStart.value = 'Start') {
+    startTime();
+    timersSave.innerHTML = '';
+  }
 
 };
