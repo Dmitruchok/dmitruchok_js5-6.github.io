@@ -81,21 +81,21 @@ function startTime() {
       buttonStart.value = 'Start';
       go = false;
     };
-
   };
 
 function save() {
   nextSaveTime = document.createElement( 'p' );
   timersSave.appendChild(nextSaveTime);
-  i++;
-  nextSaveTime.innerHTML = i+ ' ' + 'Split' + ':' + str;
+  nextSaveTime.innerHTML = ++i + ' ' + 'Split' + ':' + str;
   return i;
-
 };
 
 function resetTime() {
+  go = true;
+  clearInterval( timerId );
   buttonStart.value = 'Start';
   startTime();
+  i = 0;
+  console.log(go);
   timersSave.innerHTML = '';
-  clearInterval( timerId );
 };
