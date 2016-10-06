@@ -87,6 +87,10 @@ function startTime() {
 function save() {
   nextSaveTime = document.createElement( 'p' );
   timersSave.appendChild(nextSaveTime);
+  if (buttonStart.value = 'Start') {
+    timersSave.innerHTML = '';
+  }
+
   i++;
   nextSaveTime.innerHTML = i+ ' ' + 'Split' + ':' + str;
 
