@@ -44,6 +44,7 @@ reset_time.addEventListener( 'click', resetTime );
 
 
 var this_date = 0,
+  i=0,
   str,
   timerId,
   go = false,
@@ -86,7 +87,9 @@ function startTime() {
 function save() {
   nextSaveTime = document.createElement( 'p' );
   timersSave.appendChild(nextSaveTime);
-  nextSaveTime.innerHTML ='Split' + ':' + str;
+  i++;
+  nextSaveTime.innerHTML = i+ ' ' + 'Split' + ':' + str;
+
 };
 
 function resetTime() {
