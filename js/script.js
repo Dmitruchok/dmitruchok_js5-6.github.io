@@ -58,7 +58,7 @@ function startTime() {
       if ( msec<10 ) {
          msec = '00' + msec }
       else if (msec<=100){
-        msec = '0' + milisec
+        msec = '0' + msec
       };
       var sec = Math.floor( new_date/1000 )%60;
       var min = Math.floor( new_date/60000 )%60;
@@ -71,12 +71,11 @@ function startTime() {
       buttonStart.value = 'Stop';
     }, 1);
     go=true;
-  } else if (go == true) {
+  } else {
       nextSaveTime = document.createElement( 'p' );
       timersSave.appendChild(nextSaveTime);
       nextSaveTime.innerHTML ='Stop' + ':' + str;
       clearInterval( timerId );
-      //new_date = new Date();
       for_time.innerHTML = start_time;
       buttonStart.value = 'Start';
       go = false;
@@ -96,7 +95,6 @@ function resetTime() {
   //this_date = 0;
   go = true;
   for_time.innerHTML = start_time ;
-  timersSave.innerHTML = '';
 
   if (buttonStart.value = 'Start') {
     startTime();
