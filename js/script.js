@@ -86,13 +86,13 @@ function startTime() {
 
 
 function save() {
-  if ( buttonStart.value == 'Stop' ) {
+  if ( go == true) {
     nextSaveTime = document.createElement( 'p' );
     timersSave.appendChild( nextSaveTime );
     nextSaveTime.innerHTML = ++i + ' ' + 'Split' + ':' + str;
     return i;
   } else {
-    nextSaveTime.remove();
+    timersSave.innerHTML = '';
   };
 };
 
