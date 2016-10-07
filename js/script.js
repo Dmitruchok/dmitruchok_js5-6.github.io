@@ -59,7 +59,7 @@ function startTime() {
       var msec = new_date%1000;
       if ( msec<10 ) {
          msec = '00' + msec }
-      else if (msec<=100){
+      else if ( msec<=100 ){
         msec = '0' + msec
       };
       var sec = Math.floor( new_date/1000 )%60;
@@ -69,13 +69,13 @@ function startTime() {
       if  (min<10 ) { min = '0' + min };
       if ( hours<10 ) { hours = '0' + hours };
       str = hours + ":" + min+ ":" + sec + ":" + msec;
-      for_time.innerHTML=str;
+      for_time.innerHTML = str;
       buttonStart.value = 'Stop';
     }, 1);
-    go=true;
+    go = true;
   } else {
       nextSaveTime = document.createElement( 'p' );
-      timersSave.appendChild(nextSaveTime);
+      timersSave.appendChild( nextSaveTime );
       nextSaveTime.innerHTML = ++i + ' '+ 'Stop' + ':' + str;
       clearInterval( timerId );
       for_time.innerHTML = start_time;
@@ -84,16 +84,19 @@ function startTime() {
     }
   };
 
-function save() {
-  nextSaveTime = document.createElement( 'p' );
-  if (buttonStart.value == 'Start') {
-    nextSaveTime.style.display = 'none'
 
-  }
-  timersSave.appendChild(nextSaveTime);
-  nextSaveTime.innerHTML = ++i + ' ' + 'Split' + ':' + str;
-  return i;
+function save() {
+  if ( buttonStart.value == 'Stop' ) {
+    nextSaveTime = document.createElement( 'p' );
+    timersSave.appendChild( nextSaveTime );
+    nextSaveTime.innerHTML = ++i + ' ' + 'Split' + ':' + str;
+    return i;
+  } else {
+    nextSaveTime.remove();
+  };
 };
+
+
 
 function resetTime() {
   go = true;
@@ -101,6 +104,5 @@ function resetTime() {
   buttonStart.value = 'Start';
   startTime();
   i = 0;
-  console.log(go);
   timersSave.innerHTML = '';
 };
